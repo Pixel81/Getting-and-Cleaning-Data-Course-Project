@@ -32,6 +32,19 @@
 # 2. Extracts only the measurements on the mean and standard 
 #    deviation for each measurements
 
+        # 2.1 Load features data
+        features <- read.table("./UCI HAR Dataset/features.txt")
+        
+        # 2.2 Filter only mean & standard column on features
+        # Filter on mean & std value in features values
+        extract_features <- grepl("mean|std", features[,2])
+        # Add 2 TRUE values to the extract logical stream to save 
+        # 'y' value and 'Population' value
+        extract_features <- c(extract_features,TRUE,TRUE)
+        
+        # 2.3 Filter the data_set on extract_features
+        data_extract <- data_set[,extract_features]
+        
 # 3. Uses descriptive activity names to name the activities in
 #    the data set
 
