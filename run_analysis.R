@@ -6,23 +6,21 @@
 
 # 1. Merges the training and the test sets to create one data set
 
-        # 1.1 Load x_test & y_test files
+        # 1.1 Load x_test, y_test and subject files
         X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
         y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
-        
-        # Combine x & y test data
-        test_data <- cbind(X_test,y_test)
-        
+        subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+        # Combine x, y and subject test data
+        test_data <- cbind(X_test,y_test,subject_test)
         # Add a Population column to identify test data
         test_data$Population <- "Test"
         
-        # 1.2 Load x_test & y_test files
+        # 1.2 Load x_test, y_test and subject files
         X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
         y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
-        
-        # Combine x & y train data
-        train_data <- cbind(X_train,y_train)
-        
+        subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+        # Combine x, y and subject train data
+        train_data <- cbind(X_train,y_train,subject_train)
         # Add a Population column to identify train data
         train_data$Population <- "Train"
         
@@ -40,16 +38,29 @@
         extract_features <- grepl("mean|std", features[,2])
         # Add 2 TRUE values to the extract logical stream to save 
         # 'y' value and 'Population' value
-        extract_features <- c(extract_features,TRUE,TRUE)
+        extract_features2 <- c(extract_features,TRUE,TRUE,TRUE)
         
         # 2.3 Filter the data_set on extract_features
-        data_extract <- data_set[,extract_features]
+        data_extract <- data_set[,extract_features2]
         
 # 3. Uses descriptive activity names to name the activities in
 #    the data set
 
+        # 3.1 Load activity labels
+        activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
+        
+        # 3.2 Apply activity labels on data_set
+        data_extract$Activity <- activity_labels[data_extract[,80]]
+        
 # 4. Appropriately labels the data set with descriptive variable
 #    names
 
+        # 4.1 Filter features titles on mean & std values
+        features_selected <- features[extract_features,2]
+        
+        # 4.2 Apply features names on data_extract
+        names(data_extract) = c(features_selected,"Activity_Code",
+                                "Subject_Num","Population","Activity_lbl")
+        
 # 5. From step-4, creates a second, independant tidy data set
 #    with the average of each variable for each activity
