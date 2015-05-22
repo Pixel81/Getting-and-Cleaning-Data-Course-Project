@@ -59,8 +59,11 @@
         features_selected <- features[extract_features,2]
         
         # 4.2 Apply features names on data_extract
-        names(data_extract) = c(features_selected,"Activity_Code",
-                                "Subject_Num","Population","Activity_lbl")
+        names(data_extract) = features_selected
+        names(data_extract)[80:83] = c("Activity_Code","Subject_Num",
+                                       "Population","Activity_lbl")
         
 # 5. From step-4, creates a second, independant tidy data set
 #    with the average of each variable for each activity
+        
+        
