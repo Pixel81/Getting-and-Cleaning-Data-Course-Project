@@ -31,23 +31,23 @@ Description of the 'train' files folder
 * 'train/subject_train.txt': Subject for each activity in the training set.
 
 In each 'train' and 'test' folder, an 'Inertial Signals' folder with 9 similar files (not used in our analysis)
-* 'train/Inertial Signals/total_acc_x_train.txt': Ccceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. 
+* 'train/Inertial Signals/total_acc_x_train.txt': Acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. 
 * 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
 * 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
 The 'test' files, not developped here, ar equal to 'train' one, but on the 'test' population.
 
 ## Transformation
-# Files need to be unzip in the working directory
+### Files need to be unzip in the working directory
 
 1. Merges the training and the test sets to create one data set
 1.1 Load x_test, y_test and subject files
-Combine x, y and subject test data
-Add a Population column to identify test data
+* Combine x, y and subject test data
+* Add a Population column to identify test data
   
 1.2 Load x_test, y_test and subject files
-Combine x, y and subject train data
-Add a Population column to identify train data
+* Combine x, y and subject train data
+* Add a Population column to identify train data
 		
 1.3 Combine train & test data
 
@@ -56,8 +56,8 @@ Add a Population column to identify train data
 2.1 Load features data
         
 2.2 Filter only mean & standard column on features
-Filter on mean & std value in features values
-Add 2 TRUE values to the extract logical stream to save 'y' value and 'Population' value
+* Filter on mean & std value in features values
+* Add 2 TRUE values to the extract logical stream to save 'y' value and 'Population' value
 
 2.3 Filter the data_set on extract_features
        
