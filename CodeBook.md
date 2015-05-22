@@ -63,6 +63,7 @@ The 'test' files, not developped here, ar equal to 'train' one, but on the 'test
        
 #### 3. Uses descriptive activity names to name the activities in the data set
 3.1 Load activity labels
+
 3.2 Apply activity labels on data_set
 
 #### 4. Appropriately labels the data set with descriptive variable names
