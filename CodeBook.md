@@ -40,7 +40,7 @@ The 'test' files, not developped here, ar equal to 'train' one, but on the 'test
 ## Transformation
 ### Files need to be unzip in the working directory
 
-1. Merges the training and the test sets to create one data set
+#### 1. Merges the training and the test sets to create one data set
 1.1 Load x_test, y_test and subject files
 * Combine x, y and subject test data
 * Add a Population column to identify test data
@@ -51,7 +51,7 @@ The 'test' files, not developped here, ar equal to 'train' one, but on the 'test
 		
 1.3 Combine train & test data
 
-2. Extracts only the measurements on the mean and standard deviation for each measurements
+#### 2. Extracts only the measurements on the mean and standard deviation for each measurements
 
 2.1 Load features data
         
@@ -61,15 +61,18 @@ The 'test' files, not developped here, ar equal to 'train' one, but on the 'test
 
 2.3 Filter the data_set on extract_features
        
-3. Uses descriptive activity names to name the activities in the data set
+#### 3. Uses descriptive activity names to name the activities in the data set
 3.1 Load activity labels
 3.2 Apply activity labels on data_set
         
-4. Appropriately labels the data set with descriptive variable names
+#### 4. Appropriately labels the data set with descriptive variable names
 4.1 Filter features titles on mean & std values
 4.2 Apply features names on data_extract
         
-5. From step-4, creates a second, independant tidy data set with the average of each variable for each activity     
-5.1. Melt data into final form order
-5.2 Creation of the tidy_data set applying mean
+#### 5. From step-4, creates a second, independant tidy data set with the average of each variable for each activity.
+     
+5.1. Melt data into final form order.
+
+5.2 Creation of the tidy_data set applying mean.
+
 5.3 Write tidy_data into a txt file in the working directory
