@@ -66,4 +66,15 @@
 # 5. From step-4, creates a second, independant tidy data set
 #    with the average of each variable for each activity
         
+        # 5.1. Melt data into final form order
+        melt_data = melt(data_extract, id=c("Activity_Code","Activity_lbl",
+                                            "Subject_Num","Population"),
+                         measure.vars = features_selected)
         
+        # 5.2 Creation of the tidy_data set applying mean
+        tidy_data   = dcast(melt_data,
+                            Subject_Num + Activity_lbl ~ variable,
+                            mean)
+        
+        # 5.3 Write tidy_data into a file
+        write.table(tidy_data, file = "./tidy_data.txt", row.name = FALSE)
