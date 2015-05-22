@@ -31,9 +31,9 @@ Description of the 'train' files folder
 * 'train/subject_train.txt': Subject for each activity in the training set.
 
 In each 'train' and 'test' folder, an 'Inertial Signals' folder with 9 similar files (not used in our analysis)
-* 'train/Inertial Signals/total_acc_x_train.txt': Acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. 
-* 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
-* 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+* 'train/Inertial Signals/total_acc_x_train.txt': Acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Same on y and z files.
+* 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. Same on y and z files.
+* 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. Same on y and z files.
 
 The 'test' files, not developped here, ar equal to 'train' one, but on the 'test' population.
 
